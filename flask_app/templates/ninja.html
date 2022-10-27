@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'style.css')}}">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Create Ninja</title>
+</head>
+<body>
+    <div class="navbar-ninjas">
+        <h1><a class="link-hover" href="/">Home</a></h1>
+    </div>
+    <form class="form-action" action="/create/ninja" method="post">
+        <h3  class="newbtnfe">Location</h3>
+            <select class="options-tag" name="dojos_id">
+                {% for dojo in dojos %}
+                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                {% endfor %}
+            </select>
+        <h2 class="input-1f"></h2>
+        <label class="label-tag" for="name">First Name </label>
+        <input class="input-tag" type="text" name="first_name" required>
+        <label class="label-tag" for="name">Last Name </label>
+        <input class="input-tag" type="text" name="last_name" required>
+        <label class="label-tag" for="name">Age </label>
+        <input class="input-tag" type="text" name="age" required>
+        <input class=" submitbtn sumbitbtn1" type="submit" name="Submit">
+    </form>
+</body>
+</html>

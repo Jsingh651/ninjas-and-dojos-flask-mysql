@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Edit</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'style.css')}}">
+
+</head>
+<body>
+    <div class="navbar-edit">
+        <h1 class="newnavbtnvrf">Edit {{ninjass.first_name}}'s Info</h1>
+    </div>
+    <form class="form-action" action="/update/ninja/{{ninjass.id}}" method="post">
+        <input type="hidden" name="dojos_id" value="{{ninjass.dojos_id}}">
+        <label class="label-tag" for="name">First Name </label>
+        <input class="input-tag" type="text" name="first_name" placeholder="{{ninjass.first_name}}" required>
+        <label class="label-tag" for="name">Last Name </label>
+        <input class="input-tag" type="text" name="last_name" placeholder="{{ninjass.last_name}}" required>
+        <label class="label-tag" for="name">Age </label>
+        <input class="input-tag" type="text" name="age" placeholder="{{ninjass.age}}" required>
+        <input class=" submitbtn sumbitbtn1" type="submit" value="Confirm">
+    </form>
+</body>
+</html>

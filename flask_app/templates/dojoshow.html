@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}" />
+  <title>Show Dojo</title>
+</head>
+
+<body>
+  <div class="dojosjow-navbar">
+    <a class="link-hover" href="/dojos">Home</a>
+  </div>
+  <h1>These are all the ninjas at {{dojo.name}}</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="table-dark">First</th>
+        <th scope="col" class="table-dark">Last</th>
+        <th scope="col" class="table-dark">Age</th>
+        <th scope="col" class="table-dark">Delete</th>
+        <th scope="col" class="table-dark">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ninja in dojo.ninjas %}
+      {% if ninja.first_name != None %}
+      <tr class="table-info">
+        <td>{{ ninja.first_name }}</td>
+        <td>{{ ninja.last_name }}</td>
+        <td>{{ ninja.age }}</td>
+        <td> <a class="link-a" href="/delete/{{ninja.id}}/{{ninja.dojos_id}}">Delete</a> </td>
+        <td> <a class="link-a" href="/edit/{{ninja.id}}">Edit</a> </td>
+      </tr>
+      {%endif%}
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+</html>

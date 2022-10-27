@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo generator</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{{url_for('static',filename = 'style.css')}}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="topnav">
+    <h1 class="title">The Dojo Hall</h1>
+    <a class="ninjaroute" href="/ninja">Create Ninja</a>
+</div>
+<div class="maincont">
+        <div class="left">
+            <form action="/create/dojo" method="post">
+                <h1 class="title top">Dojo generator</h1>
+                <div class="sub">
+                <h1 class="subtitle">Enter a Dojo Name below </h1>
+                <input class="input-dojo" type="text" name="name" placeholder="Dojo generator" required>
+                <input class="submitbtn" type="submit" value="Click me!!">
+            </div>
+            <!-- <div class="submit"> -->
+            <!-- </div> -->
+            </form>
+        </div>
+        <div class="right">
+            <h1 class="title top">The Dojo List</h1>
+            <h3 class="title top sub-title">Pick a Dojo!!</h3>
+            <div class="dojo-container">
+                {%for dojo in dojos %}
+                <a class="newls" href="/show/dojo/{{dojo.id}}">{{dojo.name}}</a>
+                {% endfor %}
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+</html>
