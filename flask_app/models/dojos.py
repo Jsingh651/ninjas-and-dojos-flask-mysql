@@ -37,7 +37,8 @@ class Dojo:
 
                 """
                 # table 1 JOIN table 2 ON primary key = foreign key
-                # ninjas.dojos_id = foreign key, dojos.id = primary key
+                # ninjas.dojos_id = foreign key
+                #  dojos.id = primary key
                 # LEFT JOIN means 
                 # dojos table (on the left) shows every row
                 # ninjas table (on the right) only shows rows that have a match on the left
