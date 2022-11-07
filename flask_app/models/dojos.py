@@ -43,7 +43,7 @@ class Dojo:
                 # dojos table (on the left) shows every row
                 # ninjas table (on the right) only shows rows that have a match on the left
 
-        results = connectToMySQL('dojos_ninjas_schema').query_db( query , data)
+        results = connectToMySQL('dojos_ninjas_schemca').query_db( query , data)
         dojo = cls( results[0] )
         for row_from_db in results:
             ninja_data = {
